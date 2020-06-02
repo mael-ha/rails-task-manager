@@ -1,0 +1,8 @@
+<h1>Tasks list</h1>
+
+<ul>
+<% @tasks.each do |task| %>
+  <% task.completed ? state = "X" : state = " " %>
+  <li><%= link_to "[#{state}] #{task.id}. #{task.title} - #{task.details}", task_path(task.id) %></li>
+<% end %>
+</ul>
